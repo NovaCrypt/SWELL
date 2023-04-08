@@ -17,9 +17,8 @@ clear
 
 #  STEAM APPS AND DEDICATED SERVER MODS DIRECTORY CONFIGURATION
 #  *** TO CHANGE: EDIT AFTER THE EQUALS SIGN
-AppName="Starbound Dedicated Server"
 SteamAppsDir="${HOME}/.local/share/Steam/steamapps"
-DediServerModDir="${HOME}/.local/share/Steam/steamapps/common/${AppName}/mods"
+DediServerModDir="${HOME}/.local/share/Steam/steamapps/common/Starbound Dedicated Server/mods"
 
 # MENU SELECTION SUB-ROUTINES BLOCK
 function1() {
@@ -193,6 +192,9 @@ menu() {
 	fi
 }
 # END OF BLOCK
+if [[ ! -e $DediServerModDir ]]; then
+  mkdir -r $DediServerModDir
+fi
 
 menu
 # SCRIPT ENDS HERE
